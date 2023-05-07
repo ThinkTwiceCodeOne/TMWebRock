@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>AJAX Example</title>
+<script src='jquery/jquery.js'></script>
+<script src='/tmwebrock/JsFile?name=Student'></script>
+<script>
+$(()=>{
+$('#addModule #addStudent').click(()=>{
+var studentService=new StudentService();
+let name=$('#addModule #name').val();
+let rollNo=$('#addModule #rollNo').val();
+var s=new Student();
+s.name=name;
+s.rollNo=rollNo
+studentService.add(s).then((result)=>{
+alert(result);
+}).catch((error)=>{
+alert(error);
+});
+});
+$('#updateModule #updateStudent').click(()=>{
+var studentService=new StudentService();
+let name=$('#updateModule #name').val();
+let rollNo=$('#updateModule #rollNo').val();
+var s=new Student();
+s.name=name;
+s.rollNo=rollNo
+studentService.update(s).then((result)=>{
+alert(result);
+}).catch((error)=>{
+alert(error);
+});
+});
+$('#deleteModule #deleteStudent').click(()=>{
+var studentService=new StudentService();
+let rollNo=$('#deleteModule #rollNo').val();
+studentService.delete(rollNo).then((result)=>{
+alert(result);
+}).catch((error)=>{
+alert(error);
+});
+});
+$('#getByRollNoModule #getByRollNoStudent').click(()=>{
+var studentService=new StudentService();
+let rollNo=$('#getByRollNoModule #rollNo').val();
+studentService.getByRollNo(rollNo).then((result)=>{
+//let st=new Student(result.name,result.rollNo);
+//alert(st.name);
+$('#getByRollNoModule #showStudentByRollNo').text(result.name);
+}).catch((error)=>{
+alert(error);
+});
+});
+$('#getAllModule #getAllStudent').click(()=>{
+var studentService=new StudentService();
+studentService.getAll().then((result)=>{
+//let st=new Student(result.name,result.rollNo);
+//alert(st.name);
+//$('#getByRollNoModule #showStudentByRollNo').text(result.name);
+for(let i=0;i<result.length;i++)
+{
+var name=result[i].name;
+var rollNo=result[i].rollNo;
+var row='<tr><td>'+name+'</td><td>'+rollNo+'</td></tr>';
+$('table tbody').append(row);
+}
+}).catch((error)=>{
+alert(error);
+});
+});
+});
+</script>
+</head>
+<body>
+<div id='addModule'>
+<h1>Student Add Module</h1>
+Name<input type='text' id='name'><br>
+Roll No<input type='text' id='rollNo'><br>
+<button type='button' id='addStudent'>Save</button>
+</div>
+<br>
+<br>
+<div id='updateModule'>
+<h1>Student Update Module </h1>
+Name<input type='text' id='name'><br>
+Roll No<input type='text' id='rollNo'><br>
+<button type='button' id='updateStudent'>Update</button>
+</div>
+<div id='deleteModule'>
+<h1>Student Delete Module </h1>
+Roll No<input type='text' id='rollNo'><br>
+<button type='button' id='deleteStudent'>Delete</button>
+</div>
+<div id='getByRollNoModule'>
+<h1>Student Get by rollNo Module </h1>
+Roll No<input type='text' id='rollNo'><br>
+<span id='showStudentByRollNo'></span>
+<button type='button' id='getByRollNoStudent'>Get</button>
+</div>
+<div id='getAllModule'>
+<h1>Student Get All Module </h1>
+<button type='button' id='getAllStudent'>Get</button>
+</div>
+<table id="studentTable">
+<thead>
+<tr>
+<th>Name</th>
+<th>Roll No</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+</html>

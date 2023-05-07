@@ -19,16 +19,16 @@ You need to create your services inside WEB-INF/classes folder and you've to spe
 <param-value>bobby</param-value>
 </init-param>
 
-package bobby.test;
-import com.thinking.machines.webrock.annotations.*;
-import com.thinking.machines.webrock.*;
-import java.sql.*;
-import java.util.*;
-@Path(value="/studentService")
-public class StudentService
-{
-@Post(value="/studentService")
-@Path(value="/add")
+package bobby.test;\n
+\nimport com.thinking.machines.webrock.annotations.*;
+\nimport com.thinking.machines.webrock.*;
+\nimport java.sql.*;
+\nimport java.util.*;
+\n@Path(value="/studentService")
+\npublic class StudentService
+\n{
+\n@Post(value="/studentService")
+\n@Path(value="/add")
 public void add(Student s1)
 {
 try

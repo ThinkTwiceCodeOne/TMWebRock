@@ -91,4 +91,14 @@ Note that you've to write this in web.xml to specify the name of JS file that yo
 ```
 You can only change param-value if you change param-name then you'll not get the JS File
 
+To run the ServiceDoc
+Run the ServiceDoc as 
+```
+java -classpath "/Users/yashmundra/Desktop/tomcat9/lib/*:/Users/yashmundra/Desktop/tomcat9/webapps/tmwebrock/WEB-INF/lib/*:/Users/yashmundra/Desktop/tomcat9/webapps/tmwebrock/WEB-INF/classes:." com.thinking.machines.webrock.ServiceDoc /Users/yashmundra/Desktop/tomcat9/webapps/tmwebrock/WEB-INF/classes/bobby /Users/yashmundra/Desktop/services.pdf
+```
+
+ServiceDoc is in com/thinking/machines/webrock 
+
+
+
 Enjoy!!

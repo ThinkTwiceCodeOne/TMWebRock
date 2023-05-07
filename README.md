@@ -13,6 +13,9 @@ You need to put the thing in tomcat9/webapps
 javac -classpath "/Users/yashmundra/Desktop/tomcat9/lib/*:/Users/yashmundra/Desktop/tomcat9/webapps/tmwebrock/WEBINF/lib/*:/Users/yashmundra/Desktop/tomcat9/webapps/tmwebrock/WEB-INF/classes:." *.java
 ```
 
+You can see some of the example in classes/bobby/test
+
+
 Now some example how you can use the framework.
 You need to create your services inside WEB-INF/classes folder and you've to specify the folder name in web.xml and the param name and param value should be like this 
 ```

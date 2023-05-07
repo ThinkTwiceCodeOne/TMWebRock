@@ -9,15 +9,18 @@ Along with that there is a tool named as ServiceDoc. The tool can generate a pdf
 
 The project is compiled but if you want to compile use the following command (yashmundra is my username). 
 You need to put the thing in tomcat9/webapps
+```
 javac -classpath "/Users/yashmundra/Desktop/tomcat9/lib/*:/Users/yashmundra/Desktop/tomcat9/webapps/tmwebrock/WEBINF/lib/*:/Users/yashmundra/Desktop/tomcat9/webapps/tmwebrock/WEB-INF/classes:." *.java
+```
 
 Now some example how you can use the framework.
 You need to create your services inside WEB-INF/classes folder and you've to specify the folder name in web.xml and the param name and param value should be like this 
-
+```
 <init-param>
 <param-name>SERVICE_PACKAGE_PREFIX</param-name>
 <param-value>bobby</param-value>
 </init-param>
+```
 
 ```
 package bobby.test;\n
@@ -76,15 +79,16 @@ System.out.println(e);
 User can use ApplicationScope, RequestScope, SessionScope, ApplicationDirectory in parameters of any method and then call getAttribute or setAttribute to get or set data in Scope respectively. 
 
 Now the client side JS file will be created automatically and you can use like this in your html or jsp
+```
 <script src='/tmwebrock/JsFile?name=Student'></script>
-
+```
 Note that you've to write this in web.xml to specify the name of JS file that you want to create otherwise it'll create separate JS file for each Java File.
-
+```
 <init-param>
 <param-name>JSFile</param-name>
 <param-value>Student</param-value>
 </init-param>
-
+```
 You can only change param-value if you change param-name then you'll not get the JS File
 
 Enjoy!!

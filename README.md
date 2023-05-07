@@ -19,13 +19,14 @@ You need to create your services inside WEB-INF/classes folder and you've to spe
 <param-value>bobby</param-value>
 </init-param>
 
+```
 package bobby.test;\n
-\nimport com.thinking.machines.webrock.annotations.*;
-\nimport com.thinking.machines.webrock.*;
-\nimport java.sql.*;
-\nimport java.util.*;
-\n@Path(value="/studentService")
-\npublic class StudentService
+import com.thinking.machines.webrock.annotations.*;
+import com.thinking.machines.webrock.*;
+import java.sql.*;
+import java.util.*;
+@Path(value="/studentService")
+public class StudentService
 \n{
 \n@Post(value="/studentService")
 \n@Path(value="/add")
@@ -142,7 +143,7 @@ return al;
 }
 
 }
-
+```
 
 
 User can use ApplicationScope, RequestScope, SessionScope, ApplicationDirectory in parameters of any method and then call getAttribute or setAttribute to get or set data in Scope respectively. 
